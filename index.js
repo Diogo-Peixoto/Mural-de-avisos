@@ -1,26 +1,22 @@
 const PORT = 3000;
 const express = require('express');
 const app = express();
+const posts = require('./model/posts')
 
-let posts =[
-    {
-        id: "01",
-        title: "Teste",
-        description:"Descrição teste"
-    },
-]
+
 
 app.get("/all", (req,res) =>{
-    res.json(JSON.stringify(posts))
+    res.json(JSON.stringify(posts.getAll()))
 });
 
 
 app.post("/new", express.json(), (req, res)=>{
-    let id = generateID();
+    
     let title = req.body.title;
     let = req.body.description;
 
-    posts.push({id, title, description});
+    posts.newPost(title, description);
+    
     res.send("Post adicionado");
 })
 
@@ -28,6 +24,4 @@ app.listen(PORT, ()=>{
     console.log("Server running on port", PORT)
 })
 
-function generateID(){
-    return Math.random().toString(36).substr(2,9);
-}
+app.delete("/del",)
