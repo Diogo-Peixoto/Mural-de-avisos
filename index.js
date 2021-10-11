@@ -1,27 +1,13 @@
-const PORT = 3000;
+const PORT = 5000;
 const express = require('express');
+const apiRoute = require('./routes/api')
+const path = require('path');
+
 const app = express();
-const posts = require('./model/posts')
 
+app.use('/api', apiRoute);
+app.use(express.static(path.join(__dirname, "public")));
 
-
-app.get("/all", (req,res) =>{
-    res.json(JSON.stringify(posts.getAll()))
-});
-
-
-app.post("/new", express.json(), (req, res)=>{
-    
-    let title = req.body.title;
-    let = req.body.description;
-
-    posts.newPost(title, description);
-    
-    res.send("Post adicionado");
+app.listen(PORT, () => {
+    console.log("Server rodando na porta:", PORT)
 })
-
-app.listen(PORT, ()=>{
-    console.log("Server running on port", PORT)
-})
-
-app.delete("/del",)

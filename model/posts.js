@@ -1,8 +1,9 @@
-module.exports = {
+module.exports =  {
+
     posts: [
         {
-            id: "01",
-            title: "Teste",
+            id:"001",
+            title:"teste do mural",
             description:"Descrição teste"
         },
     ],
@@ -12,12 +13,12 @@ module.exports = {
     },
 
     newPost(title, description){
+
         this.posts.push({id: generateID(), title, description});
-    },
+    }
 
-    
-} 
 
-function generateID(){
-    return Math.random().toString(36).substr(2,9);
+}
+function generateID (){
+    return Math.random().toString(36).substr(2, 9);
 }
