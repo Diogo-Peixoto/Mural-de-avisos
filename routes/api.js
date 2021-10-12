@@ -24,4 +24,6 @@ router.use("/new",express.json(),(req,res) =>{
     res.send("Post adicionado")
 })
 
+
+
 module.exports = router; 

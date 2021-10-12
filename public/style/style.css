@@ -16,4 +16,7 @@ input{
 .btn{
     width: 100px;
 }
+.btn-danger{
+    margin-right: 10px;
+}
 

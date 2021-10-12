@@ -45,12 +45,17 @@ function newPost(){
 
     const option = {method:"POST", headers: new Headers({'content-type':'application/json'}),body:JSON.stringify(post)} 
 
-    fetch("http://192.168.1.4:5000/api/new", option).then(res =>{
-        updatePost();
-        title = document.getElementById("title").value = "";
-        document.getElementById("desc").value = "";
-    })
-}
-function excluir(id){
+    if(title != "" & description != ""){
+        fetch("http://192.168.1.4:5000/api/new", option).then(res =>{
+            updatePost();
+            title = document.getElementById("title").value = "";
+            document.getElementById("desc").value = "";
+        })
+    } 
     
 }
+function excluir(id){
+
+}
+
+    
