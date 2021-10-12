@@ -1,0 +1,19 @@
+#img{
+    background-image: url("https://gstatic.com/classroom/themes/USHistory.jpg");
+    width: 1000px;
+    height: 240px;
+    border-radius: 10px;
+}
+
+input{
+    border:none ;
+    display: block;
+    margin: 5px;
+}
+#desc{
+    height: 60px;
+}
+.btn{
+    width: 100px;
+}
+
