@@ -56,8 +56,15 @@ function newPost(){
     } 
     
 }
-function excluir(id){
+function excluir(idPost){
     
+    posDel = {id:idPost.id}
+    console.log(posDel)
+    const options = {method:"DELETE", headers: new Headers({'content-type':'application/json'}),body:JSON.stringify(posDel)}
+
+    fetch("http://192.168.1.4:5000/api/del", options).then(res => {
+        updatePost()
+    })
 }
 
     
