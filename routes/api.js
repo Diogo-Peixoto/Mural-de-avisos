@@ -1,6 +1,11 @@
 const express = require ('express');
 const router = express.Router()
 const posts = require('../model/posts')
+const cors = require('cors')
+
+
+router.use(cors())
+
 
 router.use("/",express.json())
 
