@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () =>{
 
 function updatePost(){
 
-    fetch("http://192.168.1.4:5000/api/all").then(res=>{
+    fetch("http://192.168.15.4:5000/api/all").then(res=>{
         return res.json()
     }).then(json =>{
 
@@ -48,7 +48,7 @@ function newPost(){
     const option = {method:"POST", headers: new Headers({'content-type':'application/json'}),body:JSON.stringify(post)} 
 
     if(title != "" & description != ""){
-        fetch("http://192.168.1.4:5000/api/new", option).then(res =>{
+        fetch("http://192.168.15.4:5000/api/new", option).then(res =>{
             updatePost();
             title = document.getElementById("title").value = "";
             document.getElementById("desc").value = "";
@@ -61,7 +61,7 @@ function excluir(idPost){
     let posDel = {id:idPost.id}
     const options = {method:"DELETE", headers: new Headers({'content-type':'application/json'}),body:JSON.stringify(posDel)}
 
-    fetch("http://192.168.1.4:5000/api/del", options).then(res => {
+    fetch("http://192.168.15.4:5000/api/del", options).then(res => {
         updatePost()
     })
 }
